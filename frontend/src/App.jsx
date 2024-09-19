@@ -10,7 +10,8 @@ import Home from "./components/home";
 import Employee from "./components/employee";
 import Profile from "./components/profile";
 import AddEmployee from "./components/addemployee";
-import EditEmployee from './components/editemployee'
+import EditEmployee from './components/editemployee.js';
+
  
 function App() {
   return (
