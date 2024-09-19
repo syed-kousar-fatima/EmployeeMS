@@ -26,10 +26,11 @@ function App() {
                   </RequireToken>
                   }>
                   <Route path='' element={<Home/>}></Route>
-                  <Route path='/employee' element={<Employee />}></Route>
+                  <Route path='/employee' element={<Employee/>}></Route>
                   <Route path='/profile' element={<Profile />}></Route>
-                  <Route path='/create' element={<AddEmployee />}></Route>
+                  <Route path='/create' element={<AddEmployee/>}></Route>
                   <Route path='/employeeedit/:id' element={<EditEmployee />}></Route>
+
               </Route>
             </Routes>
         </BrowserRouter>
