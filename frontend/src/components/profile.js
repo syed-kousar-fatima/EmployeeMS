@@ -1,4 +1,4 @@
-//C:\react-js\my-app\src\components\profile.js
+
 import React, { } from "react";
 
 export default function Profile() {
