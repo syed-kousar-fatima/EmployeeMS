@@ -38,8 +38,8 @@ function Welcome() {
                 </div>
             </div>
             <div className="welcome-btn">
-                 <button><a href="./login.jsx">EMPLOYEE</a></button>
-                 <button><a href="./login.jsx">ADMIN</a></button>
+                 <button className="btn"><a href="./login">EMPLOYEE</a></button>
+                 <button className="btn"><a href="./login">ADMIN</a></button>
             </div>
         </div>
     )
