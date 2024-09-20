@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Axios from "axios";
  
-const SignUp = () => {
+const Signup = () => {
     
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
@@ -89,4 +89,4 @@ const SignUp = () => {
   );
 };
    
-export default SignUp;
+export default Signup;
