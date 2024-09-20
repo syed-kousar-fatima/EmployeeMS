@@ -7,7 +7,7 @@ function Employeeimage(){
             <br/> <hr/><hr/><br/>
             <strong>Employee Management System(EMS)</strong>
             
-           <img src='./employee template(1).jpg' alt='employeepic'/><br/><br/><hr/><hr/>
+           <img src='./employee.jpg' alt='employeepic'/><br/><br/><hr/><hr/>
         </div>
     )
 }
