@@ -1,10 +1,10 @@
+
 const express = require("express");
 const mysql = require("mysql2");
 const cors = require("cors");
  
-const bcrypt = require('bcrypt'); 
+const bcrypt = require('bcryptjs'); 
 var jwt = require('jsonwebtoken'); 
- 
 const app = express();
 const port = 3001
  
@@ -17,7 +17,7 @@ const con = mysql.createConnection({
     password: "root",
     database: "employeems"
 })
- 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 con.connect(function(err) {
     if(err) {
         console.log("Error in Connection");
@@ -29,7 +29,7 @@ con.connect(function(err) {
 app.get('/getEmployee', (req, res) => {
     const sql = "SELECT * FROM employee";
     con.query(sql, (err, result) => {
-        if(err) return res.json({Error: "Get employee error in sql"});
+        if(err) return res.json({Error: "Get employee error in mysql page"});
         return res.json({Status: "Success", Result: result})
     })
 })
@@ -38,7 +38,7 @@ app.get('/get/:id', (req, res) => {
     const id = req.params.id;
     const sql = "SELECT * FROM employee where id = ?";
     con.query(sql, [id], (err, result) => {
-        if(err) return res.json({Error: "Get employee error in sql"});
+        if(err) return res.json({Error: "Get employee error in mysql page"});
         return res.json({Status: "Success", Result: result})
     })
 })
@@ -65,7 +65,7 @@ app.delete('/delete/:id', (req, res) => {
     const id = req.params.id;
     const sql = "Delete FROM employee WHERE id = ?";
     con.query(sql, [id], (err, result) => {
-        if(err) return res.json({Error: "delete employee error in sql"});
+        if(err) return res.json({Error: "delete employee error in mysql page"});
         return res.json({Status: "Success"})
     })
 })
@@ -73,7 +73,7 @@ app.delete('/delete/:id', (req, res) => {
 app.get('/adminCount', (req, res) => {
     const sql = "Select count(id) as admin from users";
     con.query(sql, (err, result) => {
-        if(err) return res.json({Error: "Error in runnig query"});
+        if(err) return res.json({Error: "Error in running the  query"});
         return res.json(result);
     })
 })
@@ -81,7 +81,7 @@ app.get('/adminCount', (req, res) => {
 app.get('/employeeCount', (req, res) => {
     const sql = "Select count(id) as employee from employee";
     con.query(sql, (err, result) => {
-        if(err) return res.json({Error: "Error in runnig query"});
+        if(err) return res.json({Error: "Error in running the query"});
         return res.json(result);
     })
 })
@@ -89,7 +89,7 @@ app.get('/employeeCount', (req, res) => {
 app.get('/salary', (req, res) => {
     const sql = "Select sum(salary) as sumOfSalary from employee";
     con.query(sql, (err, result) => {
-        if(err) return res.json({Error: "Error in runnig query"});
+        if(err) return res.json({Error: "Error in running the query"});
         return res.json(result);
     })
 })
@@ -159,4 +159,5 @@ app.post('/register',(req, res) => {
  
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
+
 })

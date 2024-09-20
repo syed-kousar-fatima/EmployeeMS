@@ -1,5 +1,6 @@
 import React from "react";
 import './welcome.scss';
+import { Link } from "react-router-dom";
 function Welcome() {
     return (
         //         <div className="welcome">
@@ -37,8 +38,8 @@ function Welcome() {
                 </div>
             </div>
             <div className="welcome-btn">
-                 <button>EMPLOYEE</button>
-                 <button>ADMIN</button>
+                 <button><a href="./login.jsx">EMPLOYEE</a></button>
+                 <button><a href="./login.jsx">ADMIN</a></button>
             </div>
         </div>
     )
