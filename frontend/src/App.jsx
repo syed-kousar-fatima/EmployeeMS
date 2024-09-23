@@ -11,7 +11,7 @@ function App() {
     <div className="app">
         <BrowserRouter>
             <Routes>
-              
+              <Route/>
             </Routes>
         </BrowserRouter>
     </div>
