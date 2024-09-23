@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar';
 import AdminDashboard from './components/AdminDashboard';
 import EmployeeDashboard from './components/EmployeeDashboard';
+import Indexpage from './components/Indexpage';
 
 
 
@@ -14,11 +15,11 @@ function App() {
     <div className="app">
         <BrowserRouter>
          <Navbar/>
-         <div className='container mt-5'>
+         <div className='container'>
             <Routes>
               <Route path='/employee-dashboard' element={<EmployeeDashboard/>}/>
               <Route path='/admin-dashboard' element={<AdminDashboard/>}/>
-              <Route path='/' element={<h1>Welcome to Employee Management System</h1>}/>
+              <Route path='/' element={<Indexpage/>}/>
             </Routes>
             </div>
         </BrowserRouter>

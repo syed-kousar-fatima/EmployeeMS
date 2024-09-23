@@ -13,7 +13,7 @@ const AddEmployee = ({ fetchEmployees, setShowAdd }) => {
             salary,
             designation,
             date_of_joining,
-            role_id: 1 // Assuming role_id for employee
+            role_id: 1 
         });
         fetchEmployees();
         setShowAdd(false);

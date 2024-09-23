@@ -13,7 +13,7 @@ const AddAdmin = ({ fetchAdmins, setShowAdd }) => {
             salary,
             designation,
             date_of_joining,
-            role_id: 2 // Assuming role_id for admin
+            role_id: 2 
         });
         fetchAdmins();
         setShowAdd(false);
