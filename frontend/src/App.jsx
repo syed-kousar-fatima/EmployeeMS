@@ -13,35 +13,39 @@ import Indexpage from './components/Indexpage/index.jsx';
 import Profile from './components/profile.jsx';
 
 
- 
+
 function App() {
   return (
     <div className="app">
-        <BrowserRouter>
-            <Routes>
-              <Route path='/index' element={<Indexpage/>}/>
-              <Route path="/login" element={<Login/>} />
-             <Route path="/signup" element={<Signup/>} />
-             
-             <Route path='/' element={
-                  <RequireToken>
-                    <Dashboard/>
-                  </RequireToken>
-                  }>
-                  <Route path='' element={<Home/>}></Route>
-                  <Route path='/employee' element={<Employee/>}></Route>
-                  <Route path='/profile' element={<Profile/>}></Route>
-                  <Route path='/create' element={<AddEmployee/>}></Route>
-                  <Route path='/employeeedit/:id' element={<EditEmployee/>}></Route>
-              </Route>
-            </Routes>
-        </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+
+          <Route path='/index' element={<Indexpage />} />
+          {/* <Route path="/login" element={<Login/>} />
+             <Route path="/signup" element={<Signup/>} /> */}
+
+          <Route path='/' element={
+            <RequireToken>
+              <Dashboard />
+            </RequireToken>
+          }>
+
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path='/home' element={<Home />}></Route>
+            <Route path='/employee' element={<Employee />}></Route>
+            <Route path='/profile' element={<Profile />}></Route>
+            <Route path='/create' element={<AddEmployee />}></Route>
+            <Route path='/employeeedit/:id' element={<EditEmployee />}></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
-   
+
 export default App;
-  
+
 
 
 

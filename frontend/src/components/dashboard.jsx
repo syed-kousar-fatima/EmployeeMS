@@ -28,12 +28,12 @@ function Dashboard() {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="profile" className="nav-link px-0 align-middle text-white">
+                                <Link to="/profile" className="nav-link px-0 align-middle text-white">
                                     <span className="ms-1 d-none d-sm-inline">Profile</span>
                                 </Link>
                             </li>
                             <li>
-                                <button type = 'button' className="btn btn-success" onClick= {signOut}>Sign Out</button>
+                                <button type='button' className="btn btn-success" onClick= {signOut}>Sign Out</button>
                             </li>
                         </ul>
                     </div>

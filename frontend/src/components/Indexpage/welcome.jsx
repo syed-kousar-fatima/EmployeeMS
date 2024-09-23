@@ -37,9 +37,13 @@ function Welcome() {
                     <img src="./images.jpeg" alt="employee" height={"300px"} width={"400px"}/>
                 </div>
             </div>
-            <div className="welcome-btn">
-                 <button className="btn"><a href="./login">EMPLOYEE</a></button>
-                 <button className="btn"><a href="./login">ADMIN</a></button>
+            
+            <div className="display">
+            <strong>Login us</strong>
+                <div className="btn"> 
+                    <button type="button"><Link to="employee">Employee</Link></button>
+                    <button type="button">Admin</button>
+                </div>
             </div>
         </div>
     )

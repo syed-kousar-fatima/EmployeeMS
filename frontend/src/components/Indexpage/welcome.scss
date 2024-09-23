@@ -27,15 +27,35 @@
         
     }
 
-    .welcome-btn {
-        margin: 10%;
-        display: flex;
-        flex-direction: row;
-        //   align-items: center;
+    // .welcome-btn {
+    //     margin: 10%;
+    //     display: flex;
+    //     flex-direction: row;
+    //     //   align-items: center;
+    //     justify-content: space-evenly;
+
+    // }
+    .display{
+        display:flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        border:1px solid rgb(58, 14, 232);
+        gap:50px;
+        margin-left:25%;
+        border-radius: 20px;
+        color:blue;
+        height:250px;
+        width:600px;
+        background-color:white;
+        font-size: 30px;
+        margin-bottom: 10%;
+       }
+    .btn{
+        display:flex;
         justify-content: space-evenly;
-
+       
     }
-
     button {
         height: 60px;
         width: 200px;
