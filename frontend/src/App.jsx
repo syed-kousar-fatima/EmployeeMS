@@ -14,11 +14,13 @@ function App() {
     <div className="app">
         <BrowserRouter>
          <Navbar/>
+         <div className='container mt-5'>
             <Routes>
               <Route path='/employee-dashboard' element={<EmployeeDashboard/>}/>
               <Route path='/admin-dashboard' element={<AdminDashboard/>}/>
               <Route path='/' element={<h1>Welcome to Employee Management System</h1>}/>
             </Routes>
+            </div>
         </BrowserRouter>
     </div>
   );

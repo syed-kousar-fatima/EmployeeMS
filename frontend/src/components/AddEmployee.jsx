@@ -31,4 +31,4 @@ const AddEmployee = ({ fetchEmployees, setShowAdd }) => {
     );
 };
 
-export default AddEmployee;
+export default AddEmployee;

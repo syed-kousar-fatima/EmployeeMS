@@ -31,4 +31,4 @@ const AddAdmin = ({ fetchAdmins, setShowAdd }) => {
     );
 };
 
-export default AddAdmin;
+export default AddAdmin;
