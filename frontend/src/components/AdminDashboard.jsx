@@ -13,12 +13,14 @@ const AdminDashboard = () => {
     const fetchAdmins = async () => {
         const response = await axios.get('http://localhost:5000/api/admins');
         setAdmins(response.data);
+    
     };
 
     const deleteAdmin = async (id) => {
         await axios.delete(`http://localhost:5000/api/admins/${id}`);
             fetchAdmins();
     };
+ 
 
     return (
         <div>
