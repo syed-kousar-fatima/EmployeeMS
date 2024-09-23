@@ -45,7 +45,7 @@ const EmployeeDashboard = () => {
                             <td>{emp.designation}</td>
                             <td>{emp.date_of_joining}</td>
                             <td>
-                                <button className="btn btn-warning me-2">Edit</button>
+                                <button className="btn btn-warning me-2"> Edit</button>
                                 <button className="btn btn-danger" onClick={() => deleteEmployee(emp.employeeid)}>Delete</button>
                             </td>
                         </tr>
