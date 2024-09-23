@@ -16,7 +16,7 @@ const AdminDashboard = () => {
     };
 
     const deleteAdmin = async (id) => {
-        await axios.delete('http://localhost:5000/api/admins/${id}');
+        await axios.delete(`http://localhost:5000/api/admins/${id}`);
             fetchAdmins();
     };
 
