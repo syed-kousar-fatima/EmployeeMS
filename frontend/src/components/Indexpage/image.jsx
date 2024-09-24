@@ -3,12 +3,12 @@ import './image.scss'
 
 function Employeeimage(){
     return(
+       
         <div className='image'>
-            
+            <img src='./employee.jpg' alt='employeepic'/>
             <strong>Employee Management System(EMS)</strong>
-            
-           <img src='./employee.jpg' alt='employeepic'/>
         </div>
+       
     )
 }
 export default Employeeimage;
