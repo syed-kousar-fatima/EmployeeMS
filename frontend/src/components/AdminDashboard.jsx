@@ -23,7 +23,7 @@ const AdminDashboard = () => {
  
 
     return (
-        <div>
+          <div>
             <h2>Admin List</h2>
             <button className="btn btn-primary mb-3" onClick={() => setShowAdd(true)}>Add Admin</button>
             {showAdd && <AddAdmin fetchAdmins={fetchAdmins} setShowAdd={setShowAdd} />}
@@ -55,6 +55,7 @@ const AdminDashboard = () => {
                 </tbody>
             </table>
         </div>
+    
     );
 };
 
