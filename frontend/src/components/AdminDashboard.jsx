@@ -24,7 +24,7 @@ const AdminDashboard = () => {
 
     return (
         <div>
-            <h2 className='d-flex justify-content-center align-items-center mt-3'>Admin Dashboard</h2>
+            <h2>Admin List</h2>
             <button className="btn btn-primary mb-3" onClick={() => setShowAdd(true)}>Add Admin</button>
             {showAdd && <AddAdmin fetchAdmins={fetchAdmins} setShowAdd={setShowAdd} />}
             <table className="table">
