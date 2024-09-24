@@ -21,7 +21,7 @@ const AddEmployee = ({ fetchEmployees, setShowAdd }) => {
 
     return (
         <div className="mb-3">
-            <h3 className='color blue'>Add Employee</h3>
+            <h3>Add Employee</h3>
             <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
             <input type="number" placeholder="Salary" value={salary} onChange={(e) => setSalary(e.target.value)} required />
             <input type="text" placeholder="Designation" value={designation} onChange={(e) => setDesignation(e.target.value)} required />
