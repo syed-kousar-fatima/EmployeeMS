@@ -26,9 +26,44 @@ const AddAdmin = ({ fetchAdmins, setShowAdd }) => {
             <input type="number" placeholder="Salary" value={salary} onChange={(e) => setSalary(e.target.value)} required />
             <input type="text" placeholder="Designation" value={designation} onChange={(e) => setDesignation(e.target.value)} required />
             <input type="date" value={date_of_joining} onChange={(e) => setDateOfJoining(e.target.value)} required />
-            <button onClick={addAdmin}>Add</button>
+            <button onClick={addAdmin} className='btn btn-primary'>Add</button>
         </div>
     );
 };
 
 export default AddAdmin;
+
+
+// import React, { useState } from "react";
+// import axios from 'axios';
+// const AddAdmin = ({ fetchAdmins,  setShowAdd}) => {
+//     const[name, setName]=useState('');
+//     const[salary, setSalary]=useState('');
+//     const[designation, setDesignation]=useState('');
+//     const[date_of_joining, setDateOfJoining]=useState('');
+
+//     const addAdmin=()=>async () =>{
+//           await axios.post('http://localhost:5000/api/admins',{
+//             name,
+//             salary,
+//             designation,
+//             date_of_joining,
+//             role_id:2
+//           });
+//           fetchAdmins()
+//           setShowAdd(false)
+
+//    }
+ 
+//     return (
+//         <div>
+//             <h2>AddAdmin</h2>
+//           <input type="text" name="name" placeholder="Name"  value={name} onChange={(e)=>setName(e.target.value)} required/>
+//           <input type="number" name="salary"  placeholder="Salary"  value={salary} onChange={(e)=>setSalary(e.target.value)} required/>
+//           <input type="text" name="designation" placeholder="designation" value={designation} onChange={(e)=>setDesignation(e.target.value)} required/>
+//           <input type="text" name="dateofjoin"   placeholder="dateofjoin" value={date_of_joining} onChange={(e)=>setDateOfJoining(e.target.value)} required/>
+//           <button onClick={addAdmin}>Add</button>
+//         </div>
+//     )
+// }
+// export default AddAdmin;

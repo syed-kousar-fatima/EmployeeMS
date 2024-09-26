@@ -1,4 +1,12 @@
+body {
+  background-color: white;
+}
 
+@media only screen and (max-width: 320px) {
+  body {
+    background-color: lightblue;
+  }
+}
 a {
   font-weight: 500;
   color: #646cff;
