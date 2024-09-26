@@ -15,10 +15,7 @@ const AdminDashboard = () => {
         setAdmins(response.data);
 
     };
-    // const editAdmin = async (id) => {
-    //     await axios.put(`http://localhost:5000/api/admins/${id}`);
-    //         fetchAdmins();
-    // };
+   
 
     const deleteAdmin = async (id) => {
         await axios.delete(`http://localhost:5000/api/admins/${id}`);
@@ -67,70 +64,3 @@ export default AdminDashboard;
 
 
 
-// import React, { useEffect, useState } from "react";
-// import axios from 'axios';
-// import AddAdmin from "./AddAdmin";
-// const AdminDashboard = () => {
-//     const [admins, setadmins] = useState([]);
-//     const [showadd, setShowAdd] = useState(false)
-
-
-//     useEffect(() => {
-//         fetchAdmins()
-//     }, [])
-
-
-//     const fetchAdmins = async () => {
-//         const response = await axios.get('http://localhost:5000/api/admins')
-//         setadmins(response.data);
-//     }
-//     const deleteAdmin=async (id)=>{
-//         await axios.delete(`http://localhost:5000/api/admins/${id}`)
-//        fetchAdmins()
-//     }
-
-//     const editAdmin=async (id)=>{
-//         await axios.put(`http://localhost:5000/api/admins/${id}`)
-//        fetchAdmins()
-//     }
-    
-//     return (
-//         <div>
-//             <h2>Admin List</h2>
-//             <button onClick={()=>setShowAdd(true)}>Add Admin</button>
-//             { showadd  && <AddAdmin fetchAdmins={fetchAdmins} setshowadd={setShowAdd}/> }
-//             <table className="table">
-//                 <thead>
-//                     <tr>
-//                         <th>AdminId</th>
-//                         <th>Name</th>
-//                         <th>Salary</th>
-//                         <th>Designation</th>
-//                         <th>Joining of Date</th>
-//                         <th>Action</th>
-
-//                     </tr>
-//                 </thead>
-//                 <tbody >
-//                     {admins.map(admin=>(
-
-//                         <tr key={admin.adminid}>
-//                             <td>{admin.adminid}</td>
-//                             <td>{admin.name}</td>
-//                             <td>{admin.salary}</td>
-//                             <td>{admin.designation}</td>
-//                             <td>{admin.dateofjoin}</td>
-//                             <td>
-//                                 <button onChange={()=>editAdmin(admin.adminid)}>Edit</button>
-//                                 <button onClick={()=>deleteAdmin(admin.adminid)}>Delete</button>
-//                             </td>
-//                         </tr>
-//                     ))} 
-                     
-
-//                 </tbody>
-
-//             </table>
-//         </div>
-//     )}
-// export default AdminDashboard;
