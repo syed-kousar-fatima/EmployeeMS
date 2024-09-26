@@ -22,6 +22,9 @@ const EmployeeDashboard = () => {
 
     return (
         <div>
+
+            <h2 className='d-flex justify-content-center align-items-center mt-3'>Employee Dashboard</h2> 
+            <button className="btn btn-primary mb-3" autoComplete='off' onClick={() => setShowAdd(true)}>Add Employee</button>
             <h2>Employee List</h2>
             <button className="btn btn-primary" onClick={() => setShowAdd(true)}>Add Employee</button>
             {showAdd && <AddEmployee fetchEmployees={fetchEmployees} setShowAdd={setShowAdd} />}
