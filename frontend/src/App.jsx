@@ -17,9 +17,10 @@ function App() {
          <Navbar/>
          <div className='container'>
             <Routes>
+              <Route path='/' element={<Indexpage/>}/>
               <Route path='/employee-dashboard' element={<EmployeeDashboard/>}/>
               <Route path='/admin-dashboard' element={<AdminDashboard/>}/>
-              <Route path='/' element={<Indexpage/>}/>
+             
             </Routes>
             </div>
         </BrowserRouter>

@@ -19,11 +19,15 @@ const EmployeeDashboard = () => {
         await axios.delete(`http://localhost:5000/api/employees/${id}`);
         fetchEmployees();
     };
+    const editEmployee = async (id) => {
+        await axios.put(`http://localhost:5000/api/employees/${id}`);
+        fetchEmployees();
+    };
 
     return (
         <div>
             <h2>Employee List</h2>
-            <button className="btn btn-primary mb-3" onClick={() => setShowAdd(true)}>Add Employee</button>
+            <button className="btn btn-primary" onClick={() => setShowAdd(true)}>Add Employee</button>
             {showAdd && <AddEmployee fetchEmployees={fetchEmployees} setShowAdd={setShowAdd} />}
             <table className="table">
                 <thead>
@@ -45,7 +49,7 @@ const EmployeeDashboard = () => {
                             <td>{emp.designation}</td>
                             <td>{emp.date_of_joining}</td>
                             <td>
-                                <button className="btn btn-warning me-2"> Edit</button>
+                                <button className="btn btn-warning me-2"onClick={()=> editEmployee(emp.employeeid)}> Edit</button>
                                 <button className="btn btn-danger" onClick={() => deleteEmployee(emp.employeeid)}>Delete</button>
                             </td>
                         </tr>
