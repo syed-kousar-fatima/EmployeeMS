@@ -1,8 +1,8 @@
 import React, { useState, useEffectt } from 'react';
 import axios from 'axios';
 
-const EditEmployee = ({ Employee, onCancel, onSave }) => {
-    const [editeEmployee, setEditeEmployee] = useState(Employee);
+const EditEmployee = ({ employee, onCancel, onSave }) => {
+    const [editeEmployee, setEditeEmployee] = useState(employee);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -12,7 +12,7 @@ const EditEmployee = ({ Employee, onCancel, onSave }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:5000/api/admins/${Employee.Employeeid}`, editeEmployee);
+            await axios.put(`http://localhost:5000/api/employee/${employee.Employeeid}`, editeEmployee);
             onSave();
         } catch (error) {
             console.error('Error updating employee:', error);
