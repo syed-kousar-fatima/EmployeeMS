@@ -12,7 +12,7 @@ const EditEmployee = ({ employee, onCancel, onSave }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:5000/api/employee/${employee.Employeeid}`, editeEmployee);
+            await axios.put(`http://localhost:5000/api/employee/${employee.employeeid}`, editeEmployee);
             onSave();
         } catch (error) {
             console.error('Error updating employee:', error);
