@@ -9,7 +9,7 @@ const EditAdmin = ({ admin, onCancel, onSave }) => {
         const { name, value } = e.target;
         setEditedAdmin(prev => ({ ...prev, [name]: value }));
     };
-
+   
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {

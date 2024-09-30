@@ -30,8 +30,10 @@ function Welcome() {
                 <h3>Welcome to Employee Management System</h3>
                 
                 <br/>
+                <p className="welcome-parimg">
                     An Employee Management System is developed using  by React JS & MySQL by using this application, Admin can add the Managers
                     in the application based on the departments, and Managers can manage the Employee Data.                like his Salary, his complete details, etc.
+                    </p>
                 </div>
                 <div>
                     <img src="./images.jpeg" alt="employee" height={"300px"} width={"400px"}/>

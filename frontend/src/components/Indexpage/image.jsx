@@ -5,7 +5,7 @@ function Employeeimage(){
     return(
        
         <div className='image'>
-            <img src='./employee.jpg' alt='employeepic'/>
+            <img src='./employee template.jpg' alt='employeepic'/>
             <strong>Employee Management System(EMS)</strong>
         </div>
        
