@@ -5,7 +5,6 @@ import AddEmployee from './AddEmployee';
 const EmployeeDashboard = () => {
     const [employees, setEmployees] = useState([]);
     const [showAdd, setShowAdd] = useState(false);
-
     useEffect(() => {
         fetchEmployees();
     }, []);
@@ -22,10 +21,10 @@ const EmployeeDashboard = () => {
 
     return (
         <div>
-
-     <h2>Employee List</h2>
+            <h2>Employee List</h2>
             <button className="btn btn-primary mb-3" onClick={() => setShowAdd(true)}>Add Employee</button>
             {showAdd && <AddEmployee fetchEmployees={fetchEmployees} setShowAdd={setShowAdd} />}
+           
             <table className="table">
                 <thead>
                     <tr>
@@ -46,7 +45,7 @@ const EmployeeDashboard = () => {
                             <td>{emp.designation}</td>
                             <td>{emp.date_of_joining}</td>
                             <td>
-                                <button className="btn btn-warning me-2"> Edit</button>
+                                <button className="btn btn-warning me-2" > Edit</button>
                                 <button className="btn btn-danger" onClick={() => deleteEmployee(emp.employeeid)}>Delete</button>
                             </td>
                         </tr>
