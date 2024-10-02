@@ -18,16 +18,16 @@ const EmployeeDashboard = () => {
         await axios.delete(`http://localhost:5000/api/employees/${id}`);
         fetchEmployees();
     };
-   
+
 
 
     return (
         <div>
 
-     <h2>Employee List</h2>
+            <h2>Employee List</h2>
             <button className="btn btn-primary mb-3" onClick={() => setShowAdd(true)}>Add Employee</button>
             {showAdd && <AddEmployee fetchEmployees={fetchEmployees} setShowAdd={setShowAdd} />}
-           
+
             <table className="table">
                 <thead>
                     <tr>
