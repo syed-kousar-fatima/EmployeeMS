@@ -54,13 +54,13 @@ const EmployeeDashboard = () => {
                     {employees.map(emp => (
 
                         <tr key={emp.employeeid}>
-                            <td>{admin.employeeid}</td>
-                            <td>{admin.name}</td>
-                            <td>{admin.salary}</td>
-                            <td>{admin.designation}</td>
-                            <td>{admin.date_of_joining}</td>
+                            <td>{emp.employeeid}</td>
+                            <td>{emp.name}</td>
+                            <td>{emp.salary}</td>
+                            <td>{emp.designation}</td>
+                            <td>{emp.date_of_joining}</td>
                             <td>
-                                {editingEmployee && editingEmployee.adminid === employee.employeeid ? (
+                                {editingEmployee && editingEmployee.adminid === emp.employeeid ? (
                                     <EditAdmin
                                         employee={editingEmployee}
                                         onCancel={cancelEditing}

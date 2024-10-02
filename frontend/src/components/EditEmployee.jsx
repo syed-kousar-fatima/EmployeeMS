@@ -40,6 +40,9 @@ const EditEmployee = ({ employee, onCancel, onSave }) => {
             <button type="submit" className="btn btn-primary me-2">Save</button>
             <button type="button" className="btn btn-secondary" onClick={onCancel}>Cancel</button>
         </form>
+
+
+
     );
 };
 
