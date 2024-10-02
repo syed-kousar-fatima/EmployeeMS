@@ -18,18 +18,7 @@ const EmployeeDashboard = () => {
         await axios.delete(`http://localhost:5000/api/employees/${id}`);
         fetchEmployees();
     };
-    const startEditing = (employee) => {
-        setEditingAdmin(employee);
-    };
-
-    const cancelEditing = () => {
-        setEditingAdmin(null);
-    };
-
-    const saveEditedAdmin = () => {
-        setEditingAdmin(null);
-        fetchAdmins();
-    };
+   
 
 
     return (
