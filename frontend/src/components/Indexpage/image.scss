@@ -5,16 +5,33 @@
 
 .image{
       
+    margin-left:100px;
     
-    width:80%;   
-    margin:10px; 
+   
     strong{
         font-size: 30px;
-        // margin-left: 350px;
+        margin-left:180px;
         color:navy;
         font-family: "Montserrat", sans-serif;
         font-weight: 500;
 
     
 }
-};
+}
+@media only screen and (max-width: 320px) {
+    .image{
+    
+        margin:10px;
+        width:300%;
+        strong{
+           
+            margin-left:200px;
+            font-size:25px;
+
+
+
+              
+        }
+
+    }
+}
