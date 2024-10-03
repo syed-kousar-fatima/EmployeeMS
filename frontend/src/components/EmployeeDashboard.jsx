@@ -5,6 +5,7 @@ import AddEmployee from './AddEmployee';
 const EmployeeDashboard = () => {
     const [employees, setEmployees] = useState([]);
     const [showAdd, setShowAdd] = useState(false);
+    const [editingEmployee, setEditingEmployee] = useState(null);
 
     useEffect(() => {
         fetchEmployees();
@@ -16,29 +17,38 @@ const EmployeeDashboard = () => {
     };
 
     const deleteEmployee = async (id) => {
-        await axios.delete(`http://localhost:5000/api/employees/${id}`);
+        await axios.delete('http://localhost:5000/api/employees/${id}');
         fetchEmployees();
     };
+
     const startEditing = (employee) => {
-        setEditingAdmin(employee);
+        setEditingEmployee({ ...employee });
     };
 
-    const cancelEditing = () => {
-        setEditingAdmin(null);
+    const handleEditChange = (e) => {
+        setEditingEmployee({ ...editingEmployee, [e.target.name]: e.target.value });
     };
 
-    const saveEditedAdmin = () => {
-        setEditingAdmin(null);
-        fetchAdmins();
+    const saveEdit = async () => {
+        try {
+            await axios.put(http://localhost:5000/api/employees/${editingEmployee.employeeid}, editingEmployee);
+            setEditingEmployee(null);
+            fetchEmployees();
+        } catch (error) {
+            console.error('Error updating employee:', error);
+        }
     };
 
+    const cancelEdit = () => {
+        setEditingEmployee(null);
+    };
 
     return (
         <div>
-
             <h2>Employee List</h2>
             <button className="btn btn-primary mb-3" onClick={() => setShowAdd(true)}>Add Employee</button>
             {showAdd && <AddEmployee fetchEmployees={fetchEmployees} setShowAdd={setShowAdd} />}
+
             <table className="table">
                 <thead>
                     <tr>
@@ -52,24 +62,66 @@ const EmployeeDashboard = () => {
                 </thead>
                 <tbody>
                     {employees.map(emp => (
-
                         <tr key={emp.employeeid}>
                             <td>{emp.employeeid}</td>
-                            <td>{emp.name}</td>
-                            <td>{emp.salary}</td>
-                            <td>{emp.designation}</td>
-                            <td>{emp.date_of_joining}</td>
                             <td>
-                                {editingEmployee && editingEmployee.adminid === emp.employeeid ? (
-                                    <EditAdmin
-                                        employee={editingEmployee}
-                                        onCancel={cancelEditing}
-                                        onSave={saveEditedAdmin}
+                                {editingEmployee && editingEmployee.employeeid === emp.employeeid ? (
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={editingEmployee.name}
+                                        onChange={handleEditChange}
                                     />
                                 ) : (
+                                    emp.name
+                                )}
+                            </td>
+                            <td>
+                                {editingEmployee && editingEmployee.employeeid === emp.employeeid ? (
+                                    <input
+                                        type="number"
+                                        name="salary"
+                                        value={editingEmployee.salary}
+                                        onChange={handleEditChange}
+                                    />
+                                ) : (
+                                    emp.salary
+                                )}
+                            </td>
+                            <td>
+                                {editingEmployee && editingEmployee.employeeid === emp.employeeid ? (
+                                    <input
+                                        type="text"
+                                        name="designation"
+                                        value={editingEmployee.designation}
+                                        onChange={handleEditChange}
+                                    />
+                                ) : (
+                                    emp.designation
+                                )}
+                            </td>
+                            <td>
+                                {editingEmployee && editingEmployee.employeeid === emp.employeeid ? (
+                                    <input
+                                        type="date"
+                                        name="date_of_joining"
+                                        value={editingEmployee.date_of_joining}
+                                        onChange={handleEditChange}
+                                    />
+                                ) : (
+                                    emp.date_of_joining
+                                )}
+                            </td>
+                            <td>
+                                {editingEmployee && editingEmployee.employeeid === emp.employeeid ? (
                                     <>
-                                        <button className="btn btn-warning me-2" onClick={() => startEditing(admin)}>Edit</button>
-                                        <button className="btn btn-danger" onClick={() => deleteEmployee(admin.adminid)}>Delete</button>
+                                        <button className="btn btn-success me-2" onClick={saveEdit}>Save</button>
+                                        <button className="btn btn-secondary" onClick={cancelEdit}>Cancel</button>
+                                    </>
+                                ) : (
+                                    <>
+                                        <button className="btn btn-warning me-2" onClick={() => startEditing(emp)}>Edit</button>
+                                        <button className="btn btn-danger" onClick={() => deleteEmployee(emp.employeeid)}>Delete</button>
                                     </>
                                 )}
                             </td>
