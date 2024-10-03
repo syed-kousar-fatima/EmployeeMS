@@ -33,7 +33,7 @@ const EmployeeDashboard = () => {
     const saveEdit = async () => {
         try {
             await axios.put(http://localhost:5000/api/employees/${editingEmployee.employeeid}, editingEmployee);
-            setEditingEmployee(null);
+                setEditingEmployee(null);
             fetchEmployees();
         } catch (error) {
             console.error('Error updating employee:', error);
